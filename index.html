@@ -16,7 +16,7 @@
 	<div class="container">
         <div class="row" id="quizbox">
             <div class="col s12">
-                <div class="card-panel purple z-depth-5 animated fadeIn">
+                <div id="card-panel" class="card-panel purple z-depth-5 animated fadeIn">
                     <h1 class="center-align white-text flow-text animated fadeIn">Welcome to the Material Design Dynamic Quiz</h1>
                     <button id="start" class="btn waves-effect waves-light pink accent-3 activate-button animated fadeIn">Lets Get Started
                     <i class="mdi-action-favorite-outline"></i></button>
@@ -24,6 +24,9 @@
                     <i class="mdi-content-send"></i></button>
                     <button id="restart" class="btn waves-effect waves-light pink accent-3 activate-button animated fadeIn">Try Again
                     <i class="mdi-content-redo"></i></button>
+                </div>
+                <div id="error-panel" class="card-panel">
+                <span class="blue-text text-darken-2">Please Select An Answer <i class="mdi-alert-error"></i><i class="mdi-alert-error"></i></span>
                 </div>
             </div>
         </div>

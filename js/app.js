@@ -26,8 +26,6 @@ var quizQuestions = [
     }
 ];
 
-
-
 // Starter
 var startFrom = 0;
 
@@ -36,17 +34,9 @@ var correctSelections = 0;
 
 $(document).ready(function () {
 
-    
     $("#start").on('click', initialize);
     $("#next").on('click', evaluateQuestion);
-    $("#restart").on('click', initializeRetry);
-
-
-
-    
-
-
-    
+    $("#restart").on('click', initializeRetry);   
 })
 
 
@@ -58,18 +48,21 @@ function initialize() {
 }
 
 function initializeRetry() {
-    $("#quizbox").find("h1").remove();
-    $("#quizbox").find("#restart").remove();
+    startFrom = 0;
+    correctSelections = 0;
     $("#quizbox").find("#next").show();
+    $("#quizbox").find("#restart").css("display", "none");
+    $("#card-panel").find("h1").remove();
+    addQuestion(startFrom);
 }
 
 
 
 function addQuestion(i) {
     if (i < quizQuestions.length) {
-    $(".card-panel").prepend("<h1 class='animated fadeIn'></h1>");
-    $(".card-panel").find("h1").text(quizQuestions[i].question).addClass("center-align white-text flow-text");
-    $(".card-panel>h1").after('<form class="animated zoomIn">\
+    $("#card-panel").prepend("<h1 class='animated fadeIn'></h1>");
+    $("#card-panel").find("h1").text(quizQuestions[i].question).addClass("center-align white-text flow-text");
+    $("#card-panel>h1").after('<form class="animated zoomIn">\
     <p><input name="group1" type="radio" id="selection1" value="0" required /><label class="white-text flow-text" for="selection1">' + quizQuestions[i].choices[0] + '</label></p>\
     <p><input name="group1" type="radio" id="selection2" value="1" required /><label class="white-text flow-text" for="selection2">' + quizQuestions[i].choices[1] + '</label></p>\
     <p><input name="group1" type="radio" id="selection3" value="2" required /><label class="white-text flow-text" for="selection3">' + quizQuestions[i].choices[2] + '</label></p>\
@@ -82,26 +75,26 @@ function evaluateQuestion() {
     if ($( "input:radio[name=group1]:checked" ).val() == quizQuestions[startFrom].correctAnswer) {
         correctSelections ++;
         console.log(correctSelections);
+        $("#error-panel").hide();
         next();
-        } else {
+    } else if ($( "input:radio[name=group1]:checked" ).val() == null) {
+        $("#error-panel").css("display", "block").show();
+    } else {
         console.log(correctSelections);
+        $("#error-panel").hide();
         next();
         }
 }
-
-
-
 function next() {
     if (startFrom == (quizQuestions.length-1)) {
-        $(".card-panel").find("form").remove();
-        $("#quizbox").find("h1").remove();
-        $(".card-panel").prepend("<h1 class='animated bounceInDown'></h1>");
-        $(".card-panel").find("h1").text('Your Score: ' + correctSelections + '/5').addClass("center-align white-text flow-text");
+        $("#card-panel").find("form").hide();
+        $("#quizbox").find("h1").hide();
+        $("#card-panel").prepend("<h1 class='animated bounceInDown'></h1>");
+        $("#card-panel").find("h1").text('Your Score: ' + correctSelections + '/5').addClass("center-align white-text flow-text");
         $("#quizbox").find("#next").hide();
         $("#quizbox").find("#restart").css("display", "inline");
     } else {
-
-        $(".card-panel").find("form").remove();
+        $("#card-panel").find("form").remove();
         $("#quizbox").find("h1").remove();
         startFrom ++;
         addQuestion(startFrom);
