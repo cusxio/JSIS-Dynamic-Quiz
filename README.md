@@ -1,4 +1,4 @@
-*** JavaScriptIsSexy Dynamiz Quiz ***
+# JavaScriptIsSexy Dynamiz Quiz 
 
 ### Current Version : v0.1
 
