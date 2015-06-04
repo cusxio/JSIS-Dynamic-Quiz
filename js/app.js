@@ -80,6 +80,11 @@ function addQuestion(i) {
 
 function evaluateQuestion() {
     if ($( "input:radio[name=group1]:checked" ).val() == quizQuestions[startFrom].correctAnswer) {
+        correctSelections ++;
+        console.log(correctSelections);
+        next();
+        } else {
+        console.log(correctSelections);
         next();
         }
 }
@@ -95,15 +100,12 @@ function next() {
         $("#quizbox").find("#next").hide();
         $("#quizbox").find("#restart").css("display", "inline");
     } else {
-        correctSelections ++;
-        console.log(correctSelections)
+
         $(".card-panel").find("form").remove();
         $("#quizbox").find("h1").remove();
         startFrom ++;
         addQuestion(startFrom);
         console.log(startFrom);
-
     }
-
 }
 
