@@ -6,7 +6,7 @@
 - JQuery
 - Animate.css
 - Normalize.css
-- 
+
 ## What's New:
 - Back Button
 - User Support
