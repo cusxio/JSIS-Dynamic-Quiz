@@ -1,49 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Materialize Dynamic Quiz</title>
-	<!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
-	<!-- Optimize Mobile Meta Tag -->
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-
+    <meta charset="UTF-8">
+    <title>Dynamic Quiz</title>
+    <link rel="stylesheet" href="dist/css/styles.css">
+    <link rel="stylesheet" href="dist/css/animate.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
-<a href="https://github.com/cusxio/JSIS-Dynamic-Quiz"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-graphite@2x.png" alt="Fork me on GitHub"></a>
-	<div class="container">
-        <div class="row" id="quizbox">
-            <div class="col s12">
-                <div id="card-panel" class="card-panel purple z-depth-5 animated fadeIn">
-                    <h1 class="center-align white-text flow-text animated fadeIn">Welcome to the Material Design Dynamic Quiz</h1>
-                    <button id="start" class="btn waves-effect waves-light pink accent-3 activate-button animated fadeIn">Lets Get Started
-                    <i class="mdi-action-favorite-outline"></i></button>
-                    <button id="next" class="btn waves-effect waves-light pink accent-3 activate-button animated fadeIn">Next
-                    <i class="mdi-content-send"></i></button>
-                    <button id="restart" class="btn waves-effect waves-light pink accent-3 activate-button animated fadeIn">Try Again
-                    <i class="mdi-content-redo"></i></button>
-                </div>
-                <div id="error-panel" class="card-panel">
-                <span class="blue-text text-darken-2">Please Select An Answer <i class="mdi-alert-error"></i><i class="mdi-alert-error"></i></span>
-                </div>
-            </div>
+    <div class="container">
+        <div class="nav">
+            <nav>
+                <h1 class=" animated fadeIn">by <a href="http://iam.cusx.io">cusx.io</a></h1>
+            </nav>
         </div>
-	</div>
 
-<!--     <footer>
-        <div id="copyright">© 2014 cusx.io</div>
-        <div id="love">Made with ~♥</div>
-    </footer> -->
+        <div class="card-panel animated fadeIn">
+            <h1 class="card-panel__welcome--guest">Welcome, Guest !</h1>
+            <h1 class="card-panel__welcome--user"></h1>
+            <div class="card-panel__welcome--message"></div>
 
-	<!-- Import JavaScript -->
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+            <div class="card-panel__username">
+                <input placeholder="Input an I.D *" id="username" type="text" autocomplete="off">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label for="first_name"></label>
+                <p>* = required</p>
+            </div>
 
+            <div class="card-panel__question">
+<!--                 <h1> Question Here </h1>
+                <form>
+                    <ul class="list">
+                    <li class="list__item">
+                    <label class="label--radio" for="selection1">
+                    <input type="radio" class="radio" name="group" id="selection1">
+                    </label>
+                    </li>
+                    <li class="list__item">
+                    <label class="label--radio" for="selection2">
+                    <input type="radio" class="radio" name="group" id="selection2">
+                    </label>
+                    </li>
+                    <li class="list__item">
+                    <label class="label--radio" for="selection3">
+                    <input type="radio" class="radio" name="group" id="selection3">
+                    </label>
+                    </li>
+                    <li class="list__item">
+                    <label class="label--radio" for="selection4">
+                    <input type="radio" class="radio" name="group" id="selection4">
+                    </label>
+                    </li>
+                    </ul>
+                </form> -->
+            </div>
+
+            <div class="card-panel__button">
+            <button class="card-panel__button--start">Start<i class="material-icons">play_arrow</i></button>
+            <button class="card-panel__button--back"><i class="material-icons">fast_rewind</i>Back</button>
+            <button class="card-panel__button--next">Next<i class="material-icons">fast_forward</i></button>
+            <button class="card-panel__button--restart">Restart<i class="material-icons">replay</i></button>
+            </div>
+
+        </div>
+
+        <div class="card-panel__error">
+        <p></p>    
+        </div>
+
+<!-- 
+        <div class="footer">
+            <footer>
+                <h1>designed by cusx</h1>
+            </footer>
+        </div> -->
+    </div>
+
+
+    
+    <script src="src/js/jquery-2.1.1.min.js"></script>
+    <script src="src/js/app.js"></script>
 </body>
 </html>
-
-

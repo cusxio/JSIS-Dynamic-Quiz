@@ -1,0 +1,102 @@
+// Bg Panel
+
+.card-panel
+    text-align: center
+    width: 80%
+    padding: 30px
+    margin: 20% auto 1% auto
+    border-radius: 2px
+    background-color: $secondary-color
+    -webkit-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22)
+    -moz-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22)
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22)
+    &__question h1
+        font-size: 2.5em
+        font-weight 300
+    &__error
+        display: none
+        text-align: center
+        margin: 0 auto
+        margin-top: 4%
+        background-color: $error-background-color
+        border-radius: 2px
+        padding: 5px
+        width: 50%
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+        p
+            color: $primary-color
+            font:
+                size: 1.5em
+                weight: 400
+            opacity: 1
+
+
+
+.card-panel__welcome
+    &--user
+        display:none
+        text-align: center
+        font-weight: 500
+        font-size: 3em
+        text-transform: uppercase
+        border: solid 2px #FFFFFF
+        width: auto !important
+        max-width: 100% !important
+        padding-top: 5px
+        padding-bottom: 5px
+        margin: 0 auto
+        margin-bottom: 1em
+        -webkit-box-shadow: 10px 7px 1px 0px rgba(255,62,65,1)
+        -moz-box-shadow: 10px 7px 1px 0px rgba(255,62,65,1)
+        box-shadow: 10px 7px 1px 0px rgba(255,62,65,1)
+    &--message
+        h1
+            font-size: 4em
+        p
+            opacity: 1
+            font-size: 2em
+
+//////////////////////////////////////////////
+//                                          //
+//                 USERNAME                 //
+//                                          //
+//////////////////////////////////////////////
+
+.card-panel__username 
+    margin-top: 5em
+    position: relative
+    label                
+        display:none
+    p   
+        font-size: 1.5em
+        opacity: 0.5
+
+::-webkit-input-placeholder 
+   color: lighten($input-border-color, 20%)
+
+
+:-moz-placeholder 
+   color: lighten($input-border-color, 20%)
+
+
+::-moz-placeholder 
+   color: lighten($input-border-color, 20%)
+
+
+:-ms-input-placeholder 
+   color: lighten($input-border-color, 20%)
+
+input[type="text"]
+    background-color: transparent
+    font-family: "Roboto"
+    font-weight: 200
+    border: none
+    border-bottom: 1px solid $input-border-color
+    border-radius: 0
+    outline: none
+    height: 1.5em
+    width: 40%
+    font-size: 2em
+    padding: 0
+    color: #FFFFFF
+    text-align: center

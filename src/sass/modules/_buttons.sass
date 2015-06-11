@@ -1,0 +1,21 @@
+// BUTTONS
+
+
+[class^="card-panel__button--"]
+    @extend %btn
+
+
+.material-icons
+    vertical-align: middle
+    margin-left: 0.5em
+    margin-top: -0.1em
+
+.card-panel__button--back .material-icons
+    margin-right: 0.5em
+
+
+
+@each $var in back, next, restart
+    .card-panel__button
+        &--#{$var}
+            display: none
